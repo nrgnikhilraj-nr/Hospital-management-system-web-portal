@@ -1,0 +1,154 @@
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #0a4bb5;
+    --accent: #14b8a6;
+    --sidebar-bg: #10243e;
+    --sidebar-hover: #163455;
+    --bg-light: #f4f7fb;
+}
+
+body {
+    background: var(--bg-light);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Auth pages (login / register) ---------- */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+    padding: 20px;
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    overflow: hidden;
+    max-width: 850px;
+    width: 100%;
+}
+
+.auth-brand {
+    background: linear-gradient(160deg, var(--primary-dark), #0d1b32);
+    color: #fff;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-brand i { font-size: 3rem; color: var(--accent); }
+
+.auth-form { padding: 45px 40px; }
+
+/* ---------- Top navbar ---------- */
+.top-navbar {
+    background: var(--sidebar-bg);
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+/* ---------- Layout ---------- */
+.wrapper {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 230px;
+    background: var(--sidebar-bg);
+    flex-shrink: 0;
+    padding-top: 15px;
+}
+
+.sidebar .nav-link {
+    color: #cdd7e5;
+    padding: 12px 22px;
+    border-left: 4px solid transparent;
+    font-size: .95rem;
+}
+
+.sidebar .nav-link i { width: 22px; }
+
+.sidebar .nav-link:hover {
+    background: var(--sidebar-hover);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background: var(--sidebar-hover);
+    color: #fff;
+    border-left-color: var(--accent);
+    font-weight: 600;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 28px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* ---------- Cards / widgets ---------- */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.stat-card i { font-size: 2rem; opacity: .85; }
+.stat-card h3 { font-size: 1.9rem; font-weight: 700; margin-bottom: 0; }
+.stat-card small { opacity: .9; }
+
+.bg-blue    { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+.bg-green   { background: linear-gradient(135deg,#10b981,#059669); }
+.bg-orange  { background: linear-gradient(135deg,#f59e0b,#d97706); }
+.bg-purple  { background: linear-gradient(135deg,#8b5cf6,#7c3aed); }
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #eef1f5;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.table thead { background: #eef3fb; }
+.table thead th { border-bottom: none; font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; color: #506176; }
+
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+
+.badge-status-Scheduled, .badge-status-Unpaid { background:#f59e0b; }
+.badge-status-Completed, .badge-status-Paid   { background:#10b981; }
+.badge-status-Cancelled                        { background:#ef4444; }
+.badge-status-Partial                          { background:#3b82f6; }
+
+footer.app-footer {
+    text-align: center;
+    padding: 15px;
+    color: #8493a8;
+    font-size: .85rem;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: fixed;
+        left: -230px;
+        top: 60px;
+        bottom: 0;
+        z-index: 1000;
+        transition: left .25s ease;
+    }
+    .sidebar.show { left: 0; }
+}
